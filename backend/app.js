@@ -1,16 +1,16 @@
-const express = require('express');
-const morgan = require('morgan');
+const express = require("express");
+const morgan = require("morgan");
 
-require('dotenv').config();
-require('./db/index');
+require("dotenv").config();
+require("./db/index");
 
-const postRouter = require('./routes/post');
+const postRouter = require("./routes/post");
 
 const app = express();
 
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(express.json());
-app.use('/api/post', postRouter);
+app.use("/api/post", postRouter);
 
 const PORT = process.env.PORT;
 
