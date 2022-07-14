@@ -1,7 +1,9 @@
-const router = require("express").Router();
-const { createPost } = require("../controllers/post");
-const multer = require("../middleware/multer");
+import express from 'express';
+const router = express.Router();
 
-router.post("/create", multer.single("thumbnail"), createPost);
+import createPost from '../controllers/post.js';
+import multer from '../middleware/multer.js';
 
-module.exports = router;
+router.post('/create', multer.single('thumbnail'), createPost);
+
+export default router;

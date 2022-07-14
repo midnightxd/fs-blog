@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
 const postSchema = mongoose.Schema(
   {
@@ -20,7 +20,7 @@ const postSchema = mongoose.Schema(
     tags: [String],
     author: {
       type: String,
-      default: "Admin",
+      default: 'Admin',
     },
     slug: {
       type: String,
@@ -39,7 +39,7 @@ const postSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-module.exports = mongoose.model('Post', postSchema);
+export default mongoose.model('Post', postSchema);

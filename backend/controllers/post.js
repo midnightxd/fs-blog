@@ -1,9 +1,12 @@
-const Post = require("../models/post");
+import Post from '../models/post.js';
 
-exports.createPost = (req, res) => {
-  console.log(req.body);
+const createPost = (req, res) => {
+  console.log(req.file);
+
   const { title, meta, content, slug, author, tags } = req.body;
   const newPost = new Post({ title, meta, content, slug, author, tags });
 
   res.json(newPost);
 };
+
+export default createPost;

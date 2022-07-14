@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
+import mongoose from 'mongoose';
+import dotenv from 'dotenv/config';
 
 const CONNECTION_STRING = process.env.CONNECTION_STRING;
 
 mongoose
   .connect(CONNECTION_STRING)
-  .then(() => console.log("Database as been connected."))
-  .catch((err) => console.log("Database connection faled", err.message || err));
+  .then(() => console.log('Database as been connected.'))
+  .catch(err => console.log('Database connection faled', err.message || err));

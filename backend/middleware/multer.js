@@ -1,8 +1,12 @@
-const multer = require("multer");
+import multer from 'multer';
 
-const storage = multer.diskStorage({});
-const fileFilter = (req, file, cb) => {
-  console.log(file);
+export const storage = multer.diskStorage({});
+
+export const fileFilter = (req, file, cb) => {
+  if (!file.mimetype.includes('images')) {
+    return callback('Invalid image format', false);
+  }
+  callback(null, true);
 };
 
-module.exports = multer({ storage, fileFilter });
+export default multer({ storage, fileFilter });
